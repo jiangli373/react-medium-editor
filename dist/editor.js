@@ -23,9 +23,18 @@ module.exports = React.createClass({
 
     var dom = this.getDOMNode();
     this.medium = new MediumEditor(dom, this.props.options);
+
     this.medium.subscribe('editableInput', function (e) {
       _this._updated = true;
       _this.change(dom.innerHTML);
+    });
+
+    this.medium.subscribe('editableBlur', function (e) {
+      _this.blur(dom.innerHTML, e);
+    });
+
+    this.medium.subscribe('editableKeyup', function (e) {
+      _this.keyUp(e);
     });
   },
 
@@ -51,5 +60,13 @@ module.exports = React.createClass({
 
   change: function change(text) {
     if (this.props.onChange) this.props.onChange(text);
+  },
+
+  blur: function blur(text) {
+    if (this.props.onBlur) this.props.onBlur(text);
+  },
+
+  keyUp: function keyUp(event) {
+    if (this.props.onKeyUp) this.props.onKeyUp(event);
   }
 });
