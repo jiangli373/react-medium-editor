@@ -22,13 +22,27 @@ var App = React.createClass({
           text={this.state.text}
           onChange={this.handleChange}
         />
+        <Editor
+            text={this.state.text}
+            onBlur={this.handleChange}
+            />
+        <hr/>
+        <Editor
+            text={this.state.text}
+            onKeyUp={this.handleKeyUp}
+            />
       </div>
     );
   },
 
   handleChange(text) {
     this.setState({text: text});
+  },
+
+  handleKeyUp(event) {
+    console.log('=========',event);
   }
+
 });
 
 React.render(<App/>, document.body);
