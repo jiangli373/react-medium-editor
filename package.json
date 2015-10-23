@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/wangzuo/react-medium-editor",
   "dependencies": {
-    "medium-editor": "^4.10.1",
+    "medium-editor": "^5.9.0",
     "react": "^0.13.3"
   },
   "devDependencies": {

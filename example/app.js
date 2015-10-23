@@ -12,25 +12,37 @@ var App = React.createClass({
     return (
       <div>
         <div>{this.state.text}</div>
+        <hr/>
+        <hr/>
+        <hr/>
         <Editor
           tag="h1"
           text={this.state.text}
           onChange={this.handleChange}
-          options={{buttons: ['bold', 'italic', 'underline']}}
+          options={{
+          toolbar: {
+            /* These are the default options for the toolbar,
+             if nothing is passed this is what is used */
+            allowMultiParagraphSelection: true,
+            buttons: ['bold', 'italic', 'underline', 'anchor', 'h3', 'quote', 'justifyLeft','justifyCenter','justifyRight','justifyFull','fontsize','removeFormat'],
+            diffLeft: 0,
+            diffTop: -10,
+            firstButtonClass: 'medium-editor-button-first',
+            lastButtonClass: 'medium-editor-button-last',
+            standardizeSelectionStart: false,
+            static: false,
+            relativeContainer: null,
+
+            /* options which only apply when static is true */
+            align: 'center',
+            sticky: false,
+            updateOnEmptySelection: false
+        }
+        }}
         />
-        <Editor
-          text={this.state.text}
-          onChange={this.handleChange}
-        />
-        <Editor
-            text={this.state.text}
-            onBlur={this.handleChange}
-            />
         <hr/>
-        <Editor
-            text={this.state.text}
-            onKeyUp={this.handleKeyUp}
-            />
+        <hr/>
+        <hr/>
       </div>
     );
   },
