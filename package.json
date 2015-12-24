@@ -1,6 +1,6 @@
 {
   "name": "react-medium-editor",
-  "version": "1.3.0",
+  "version": "1.34.0",
   "description": "React wrapper for medium-editor",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
   "homepage": "https://github.com/wangzuo/react-medium-editor",
   "dependencies": {
     "medium-editor": "^5.9.0",
-    "react": "^0.13.3"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "devDependencies": {
     "babel-core": "^5.4.5",
